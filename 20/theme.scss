@@ -1,0 +1,80 @@
+---
+---
+
+/*************************** Theme Colours****************************/
+// Define theme colour scheme
+$theme-color-primary: #781e7c;
+$theme-color-secondary: #37c9ff;
+$theme-text-color-primary: #141c25;
+$theme-text-color-secondary: lighten($theme-text-color-primary, 25%);
+$theme-text-color-light: lighten($theme-text-color-primary, 40%);
+$theme-bg-light: #f0f6fa;
+$theme-bg-primary: $theme-color-primary;
+$theme-bg-dark: $theme-text-color-primary;
+$theme-border-color:  #e5ecf4;
+$theme-color-tick: #5ab66e;
+$smoky-white: #f5f5f5;
+$single-col-max: 800px;
+
+/*************************** Variables Section. *****************************/
+// Create variables to override the default value for variables used in the Bootstrap SCSS files.
+
+$gray-100: lighten($theme-text-color-secondary, 65%);
+$gray-200: lighten($theme-text-color-secondary, 55%);
+$gray-300: lighten($theme-text-color-secondary, 50%);
+$gray-400: lighten($theme-text-color-secondary, 45%);
+$gray-500: lighten($theme-text-color-secondary, 40%);
+$gray-600: lighten($theme-text-color-secondary, 30%);
+$gray-700: lighten($theme-text-color-secondary, 20%);
+$gray-800: lighten($theme-text-color-secondary, 10%);
+$gray-900: $theme-text-color-primary;
+
+$theme-colors: (
+  "primary":  $theme-color-primary, 
+  "secondary": $theme-text-color-secondary, 
+);
+
+/*************************** Import Bootstrap  *****************************/
+@import "bootstrap/4.4.1/_functions";
+@import "bootstrap/4.4.1/_variables";
+@import "bootstrap/4.4.1/_mixins";
+@import "bootstrap/4.4.1/_root";
+@import "bootstrap/4.4.1/_reboot";
+@import "bootstrap/4.4.1/_type";
+@import "bootstrap/4.4.1/_images";
+//@import "bootstrap/4.4.1/_code";
+@import "bootstrap/4.4.1/_grid";
+//@import "bootstrap/4.4.1/_tables";
+//@import "bootstrap/4.4.1/_forms";
+@import "bootstrap/4.4.1/_buttons";
+@import "bootstrap/4.4.1/_transitions";
+//@import "bootstrap/4.4.1/_dropdown";
+//@import "bootstrap/4.4.1/_button-group";
+//@import "bootstrap/4.4.1/_input-group";
+//@import "bootstrap/4.4.1/_custom-forms";
+@import "bootstrap/4.4.1/_nav";
+@import "bootstrap/4.4.1/_navbar";
+@import "bootstrap/4.4.1/_card";
+//@import "bootstrap/4.4.1/_breadcrumb";
+//@import "bootstrap/4.4.1/_pagination";
+//@import "bootstrap/4.4.1/_badge";
+//@import "bootstrap/4.4.1/_jumbotron";
+//@import "bootstrap/4.4.1/_alert";
+//@import "bootstrap/4.4.1/_progress";
+//@import "bootstrap/4.4.1/_media";
+//@import "bootstrap/4.4.1/_list-group";
+@import "bootstrap/4.4.1/_close";
+//@import "bootstrap/4.4.1/_toasts";
+@import "bootstrap/4.4.1/_modal";
+//@import "bootstrap/4.4.1/_tooltip";
+//@import "bootstrap/4.4.1/_popover";
+@import "bootstrap/4.4.1/_carousel";
+//@import "bootstrap/4.4.1/_spinners";
+@import "bootstrap/4.4.1/_utilities";
+//@import "bootstrap/4.4.1/_print";
+
+
+
+/*************************** Theme Styles Section ****************************/
+@import "20/styles.scss"
+
