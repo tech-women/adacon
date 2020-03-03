@@ -109,7 +109,7 @@ $(document).ready(function() {
       const w = Math.floor((el.width() * 1.2) / 100) * 100;
       const h = Math.floor((el.height() * 1.2) / 100) * 100;
       el.css({
-        background: `url('${imgUrl}?w=${w}&h=${h}&fit=fill') no-repeat center center`
+        background: `url('${imgUrl}?w=${w}&h=${h}&fit=fill&fm=webp') no-repeat center center`
       });
     }
   });
