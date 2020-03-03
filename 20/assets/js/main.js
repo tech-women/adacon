@@ -4,6 +4,21 @@ $(window).on("load", function () {
   } else {
     $("#header").removeClass("header-shrink");
   }
+  $(".carousel-inner .carousel-item").each((_, e) => {
+    const el = $(e);
+    const imgUrl = el.data("url");
+    if (imgUrl) {
+      const w = Math.floor((el.width() * 1) / 100) * 100;
+      const h = Math.floor((el.height() * 1) / 100) * 100;
+      el.css({
+        'background-image': `url('${imgUrl}?w=${w}&h=${h}&fit=crop&fm=webp&q=80')`,
+        'background-size': 'cover',
+        'background-size': 'cover',
+        'background-position-x': 'center',
+        'background-position-y': 'center'
+      });
+    }
+  });
 });
 
 $(document).ready(function () {
@@ -101,20 +116,4 @@ $(document).ready(function () {
       "</span>" +
       '<span class="unit">Secs</span>';
   }, 1000);
-
-  $(".carousel-inner .carousel-item").each((_, e) => {
-    const el = $(e);
-    const imgUrl = el.data("url");
-    if (imgUrl) {
-      const w = Math.floor((el.width() * 1) / 100) * 100;
-      const h = Math.floor((el.height() * 1) / 100) * 100;
-      el.css({
-        'background-image': `url('${imgUrl}?w=${w}&h=${h}&fit=crop&fm=webp&q=80')`,
-        'background-size': 'cover',
-        'background-size': 'cover',
-        'background-position-x': 'center',
-        'background-position-y': 'center'
-      });
-    }
-  });
 });
