@@ -244,27 +244,6 @@
 }
 
 /* Schedule Section */
-.schedule-nav {
-  .nav-item {
-    span {
-      display: block;
-    }
-    .heading {
-      font-family: "Montserrat", sans-serif;
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
-    .meta {
-      @include opacity(0.8);
-    }
-  }
-
-  .nav-link {
-    background: $theme-bg-light;
-    @include border-radius(0);
-    border-right: rgba(0, 0, 0, 0.1);
-  }
-}
 
 .schedule-tab-content {
   padding: 2rem 0;
