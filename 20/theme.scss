@@ -11,7 +11,7 @@ $theme-text-color-light: lighten($theme-text-color-primary, 40%);
 $theme-bg-light: #f0f6fa;
 $theme-bg-primary: $theme-color-primary;
 $theme-bg-dark: $theme-text-color-primary;
-$theme-border-color:  #e5ecf4;
+$theme-border-color: #e5ecf4;
 $theme-color-tick: #5ab66e;
 $smoky-white: #f5f5f5;
 $single-col-max: 800px;
@@ -30,8 +30,8 @@ $gray-800: lighten($theme-text-color-secondary, 10%);
 $gray-900: $theme-text-color-primary;
 
 $theme-colors: (
-  "primary":  $theme-color-primary, 
-  "secondary": $theme-text-color-secondary, 
+  "primary": $theme-color-primary,
+  "secondary": $theme-text-color-secondary
 );
 
 /*************************** Import Bootstrap  *****************************/
@@ -73,8 +73,5 @@ $theme-colors: (
 @import "bootstrap/4.4.1/_utilities";
 //@import "bootstrap/4.4.1/_print";
 
-
-
 /*************************** Theme Styles Section ****************************/
-@import "20/styles.scss"
-
+@import "20/styles.scss"; // Feather icons
