@@ -11,9 +11,15 @@
     padding: 0;
   }
 
-  .logo-icon {
-    height: 34px;
-    width: auto;
+  .navbar-brand {
+    font-weight: 800;
+    font-size: 24px;
+    color: #fff;
+    padding: 0;
+    img {
+      width: 44px;
+      height: 44px;
+    }
   }
 }
 
