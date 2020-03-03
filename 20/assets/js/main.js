@@ -1,4 +1,4 @@
-$(window).on("load", function() {
+$(window).on("load", function () {
   if ($(window).scrollTop() > 80) {
     $("#header").addClass("header-shrink");
   } else {
@@ -6,10 +6,10 @@ $(window).on("load", function() {
   }
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   /* ======= Fixed Header animation ======= */
 
-  $(window).on("scroll", function() {
+  $(window).on("scroll", function () {
     if ($(window).scrollTop() > 100) {
       $("#header").addClass("header-shrink");
     } else {
@@ -21,7 +21,7 @@ $(document).ready(function() {
   $("body").scrollspy({ target: "#header", offset: 400 });
 
   /* ===== Smooth scrolling ====== */
-  $("a.scrollto").on("click", function(e) {
+  $("a.scrollto").on("click", function (e) {
     //store hash
     var target = this.hash;
     e.preventDefault();
@@ -34,10 +34,10 @@ $(document).ready(function() {
   });
 
   /* ====== test ===== */
-  $("#navigation").on("show.bs.collapse", function() {
+  $("#navigation").on("show.bs.collapse", function () {
     $(".header").addClass("header-has-bg");
   });
-  $("#navigation").on("hide.bs.collapse", function() {
+  $("#navigation").on("hide.bs.collapse", function () {
     $(".header").removeClass("header-has-bg");
   });
 
@@ -64,7 +64,7 @@ $(document).ready(function() {
   countdown.appendChild(secs_span);
 
   // update the tag with id "countdown" every 1 second
-  setInterval(function() {
+  setInterval(function () {
     // find the amount of "seconds" between now and target
     var current_date = new Date().getTime();
     var seconds_left = (target_date - current_date) / 1000;
@@ -106,10 +106,14 @@ $(document).ready(function() {
     const el = $(e);
     const imgUrl = el.data("url");
     if (imgUrl) {
-      const w = Math.floor((el.width() * 1.2) / 100) * 100;
-      const h = Math.floor((el.height() * 1.2) / 100) * 100;
+      const w = Math.floor((el.width() * 1) / 100) * 100;
+      const h = Math.floor((el.height() * 1) / 100) * 100;
       el.css({
-        background: `url('${imgUrl}?w=${w}&h=${h}&fit=fill&fm=webp') no-repeat center center`
+        'background-image': `url('${imgUrl}?w=${w}&h=${h}&fit=crop&fm=webp&q=80')`,
+        'background-size': 'cover',
+        'background-size': 'cover',
+        'background-position-x': 'center',
+        'background-position-y': 'center'
       });
     }
   });
