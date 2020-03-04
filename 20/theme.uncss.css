@@ -46,6 +46,12 @@
 /*************************** Theme Colours****************************/
 /*************************** Variables Section. *****************************/
 /*************************** Import Bootstrap  *****************************/
+/*!
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -319,6 +325,11 @@ small {
 
   .offset-lg-1 {
     margin-left: 8.3333333333%; } }
+.was-validated .custom-control-input:valid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-valid:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: #28a745; }
+.was-validated .custom-control-input:invalid:focus:not(:checked) ~ .custom-control-label::before, .custom-control-input.is-invalid:focus:not(:checked) ~ .custom-control-label::before {
+  border-color: #dc3545; }
+
 .btn {
   display: inline-block;
   font-weight: 400;
@@ -489,6 +500,12 @@ a.btn.disabled {
 
 .collapse:not(.show) {
   display: none; }
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: #cd47d2; }
+  .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
+    color: #fff;
+    background-color: #d870dc;
+    border-color: #d870dc; }
 
 .nav {
   display: flex;
@@ -609,6 +626,13 @@ a.btn.disabled {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px); }
 
+.media {
+  display: flex;
+  align-items: flex-start; }
+
+.media-body {
+  flex: 1; }
+
 .close {
   float: right;
   font-size: 1.5rem;
@@ -683,6 +707,7 @@ button.close {
   .modal-dialog {
     max-width: 500px;
     margin: 1.75rem auto; } }
+
 .carousel {
   position: relative; }
 
@@ -945,6 +970,39 @@ button.close {
 .text-muted {
   color: #8fa7c2 !important; }
 
+@media print {
+  *,
+  *::before,
+  *::after {
+    text-shadow: none !important;
+    box-shadow: none !important; }
+
+  a:not(.btn) {
+    text-decoration: underline; }
+
+  img {
+    page-break-inside: avoid; }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+
+  h2,
+  h3 {
+    page-break-after: avoid; }
+
+  @page {
+    size: a3; }
+  body {
+    min-width: 992px !important; }
+
+  .container {
+    min-width: 992px !important; }
+
+  .navbar {
+    display: none; } }
 /*************************** Theme Styles Section ****************************/
 /*!  
  * Spot - Bootstrap 4 Template For Tech Conferences and Events
@@ -1020,6 +1078,7 @@ a.theme-link {
 .single-col-max {
   max-width: 800px; }
 
+/* uncss:ignore start */
 /* Header */
 .header {
   padding-top: 0.5rem;
@@ -1042,6 +1101,12 @@ a.theme-link {
       width: 44px;
       height: 44px; }
 
+.header-shrink {
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  background: #141c25; }
+
 .navbar-nav .nav-item {
   font-family: "Montserrat", sans-serif;
   font-size: 0.875rem; }
@@ -1053,6 +1118,10 @@ a.theme-link {
   font-weight: 600;
   padding: 1rem; }
   .navbar-nav .nav-link:hover {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1; }
+  .navbar-nav .nav-link.active {
     -webkit-opacity: 1;
     -moz-opacity: 1;
     opacity: 1; }
@@ -1128,6 +1197,17 @@ a.theme-link {
   display: inline-block;
   padding: 0.5rem 0;
   min-width: 60px; }
+  .countdown-box span > span {
+    display: block;
+    padding: 0; }
+.countdown-box .number {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #141c25; }
+.countdown-box .unit {
+  -webkit-opacity: 0.9;
+  -moz-opacity: 0.9;
+  opacity: 0.9; }
 
 /* Section Generic */
 .section {
@@ -1148,6 +1228,8 @@ a.theme-link {
 .benefits-list li {
   margin-bottom: 0.5rem;
   font-size: 1.125rem; }
+  .benefits-list li .svg-inline--fa {
+    color: #5ab66e; }
 
 /* Speakers Section */
 .speakers-section .card {
@@ -1207,9 +1289,13 @@ a.theme-link {
       height: 100%;
       left: 196px;
       top: 5px; }
+    .schedule-tab-content .tab-pane.no-timeline:after {
+      display: none; }
   .schedule-tab-content .item {
     position: relative;
     margin-bottom: 2rem; }
+    .schedule-tab-content .item .item-talk {
+      min-height: 165px; }
     .schedule-tab-content .item:after {
       content: "";
       display: inline-block;
@@ -1234,6 +1320,8 @@ a.theme-link {
       .schedule-tab-content .item .meta .time {
         font-size: 1.25rem;
         color: #781e7c; }
+      .schedule-tab-content .item .meta .location {
+        font-weight: bold; }
     .schedule-tab-content .item .profile-image {
       width: 80px; }
     .schedule-tab-content .item .content {
@@ -1255,6 +1343,8 @@ a.theme-link {
     text-align: center;
     border-radius: 50%;
     padding-top: 0.5rem; }
+  .offers-list li .svg-inline--fa {
+    font-size: 1.125rem; }
 
 .pricing .card {
   background: #fff;
@@ -1310,6 +1400,8 @@ a.theme-link {
   border: 1px solid #fff; }
   .venue-section .grid-item .title {
     font-size: 1.125rem; }
+  .venue-section .grid-item .svg-inline--fa {
+    font-size: 1.25rem; }
 
 /* Sponsors */
 .logo-item {
@@ -1376,6 +1468,16 @@ a.theme-link {
   .speakers-section .card {
     height: inherit; }
 
+  .schedule-nav .nav-item .heading {
+    font-size: 0.875rem; }
+
+  .schedule-nav .nav-item .meta {
+    font-size: 0.75rem; }
+
+  .schedule-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0; }
+
   .schedule-tab-content .item .meta {
     position: static;
     width: auto; }
@@ -1392,4 +1494,8 @@ a.theme-link {
     padding: 1rem; }
     .schedule-tab-content .item:last-child {
       margin-bottom: 0; } }
+@media (max-width: 991.98px) {
+  .header-has-bg {
+    background: #141c25; } }
+/* uncss:ignore end */
 
