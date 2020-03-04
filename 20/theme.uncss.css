@@ -138,6 +138,10 @@ img {
   vertical-align: middle;
   border-style: none; }
 
+svg {
+  overflow: hidden;
+  vertical-align: middle; }
+
 button {
   border-radius: 0; }
 
@@ -1120,6 +1124,10 @@ a.theme-link {
   color: #ffffffb3; }
 
 /* countdown block */
+.countdown-box span {
+  display: inline-block;
+  padding: 0.5rem 0;
+  min-width: 60px; }
 
 /* Section Generic */
 .section {
@@ -1328,7 +1336,11 @@ a.theme-link {
     padding-right: 1rem; }
 
   .modal-dialog {
-    max-width: 700px; } }
+    max-width: 700px; }
+
+  .countdown-box span {
+    padding: 0.5rem 1.5rem;
+    min-width: 90px; } }
 @media (min-width: 992px) {
   .modal-dialog {
     max-width: 800px; }
