@@ -9,7 +9,7 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
-  tests:
+  uncss:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,17 +28,12 @@ jobs:
             ${{ runner.OS }}-
       - name: Install dependencies
         run: npm ci --no-audit
-      - name: Keep Docker cache around to speed up installs
-        uses: actions/cache@v1
-        with:
-          path: /var/lib/docker
-          key: ${{ runner.OS }}-docker
       - name: Start local server
-        run: docker run -d -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages > docker.pid
+        run: docker run -d -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages > /tmp/docker.pid
       - name: UNCSS
-        run: make 20/theme.uncss.css
+        run: make -B 20/theme.uncss.css
       - name: Stop local server
-        run: docker stop `cat docker.pid`
+        run: docker stop `cat /tmp/docker.pid`
       - name: Commit build
         run: |
           echo "machine github.com login coderbyheart password ${GITHUB_TOKEN}" > ~/.netrc
