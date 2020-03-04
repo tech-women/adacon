@@ -33,7 +33,7 @@ jobs:
       - name: ensure the server is running
         run: for i in {1..30}; do curl http://127.0.0.1:4000/20/dev.html && break || sleep 1; done
       - name: UNCSS
-        run: npx uncss http://127.0.0.1:4000/20/dev.html > 20/theme.uncss.css
+        run: npx uncss -t 1000 http://127.0.0.1:4000/20/dev.html > 20/theme.uncss.css
       - name: Commit build
         run: |
           echo "machine github.com login coderbyheart password ${GITHUB_TOKEN}" > ~/.netrc
