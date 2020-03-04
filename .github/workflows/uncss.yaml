@@ -30,12 +30,8 @@ jobs:
         run: npm ci --no-audit
       - name: Start local server
         run: docker run -d -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages > /tmp/docker.pid
-      - name: Wait until pages are rendered
-        uses: juliangruber/sleep-action@v1
-        with:
-          time: 30s
       - name: ensure the server is running
-        run: curl http://127.0.0.1:4000/20/dev.html > /dev/null
+        run: for i in {1..30}; do curl http://127.0.0.1:4000/20/dev.html && break || sleep 1; done
       - name: UNCSS
         run: npx uncss http://127.0.0.1:4000/20/dev.html > 20/theme.uncss.css
       - name: Commit build
