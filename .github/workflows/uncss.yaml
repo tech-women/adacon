@@ -30,8 +30,14 @@ jobs:
         run: npm ci --no-audit
       - name: Start local server
         run: docker run -d -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages > /tmp/docker.pid
+      - name: Wait until pages are rendered
+        uses: juliangruber/sleep-action@v1
+        with:
+          time: 30s
+      - name: ensure the server is running
+        run: curl http://127.0.0.1:4000/20/dev.html > /dev/null
       - name: UNCSS
-        run: make -B 20/theme.uncss.css
+        run: npx uncss http://127.0.0.1:4000/20/dev.html > 20/theme.uncss.css
       - name: Commit build
         run: |
           echo "machine github.com login coderbyheart password ${GITHUB_TOKEN}" > ~/.netrc

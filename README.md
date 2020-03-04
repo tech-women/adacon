@@ -17,6 +17,6 @@ The page will be available on <http://localhost:4000/20/dev.html>.
 In order to create a CSS file with only the neccessary styles, we use [`uncss`](https://github.com/uncss/uncss).
 
     npm ci
-    make 20/theme.uncss.css
+    npx uncss http://127.0.0.1:4000/20/dev.html > 20/theme.uncss.css
 
 You can test the result on <http://localhost:4000/20/>.
