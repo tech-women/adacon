@@ -1,4 +1,4 @@
-$(window).on("load", function () {
+$(window).on("load", function() {
   if ($(window).scrollTop() > 80) {
     $("#header").addClass("header-shrink");
   } else {
@@ -11,20 +11,20 @@ $(window).on("load", function () {
       const w = Math.floor((el.width() * 1) / 100) * 100;
       const h = Math.floor((el.height() * 1) / 100) * 100;
       el.css({
-        'background-image': `url('${imgUrl}?w=${w}&h=${h}&fit=crop&fm=webp&q=80')`,
-        'background-size': 'cover',
-        'background-size': 'cover',
-        'background-position-x': 'center',
-        'background-position-y': 'center'
+        "background-image": `url('${imgUrl}?w=${w}&h=${h}&fit=crop&fm=webp&q=80')`,
+        "background-size": "cover",
+        "background-size": "cover",
+        "background-position-x": "center",
+        "background-position-y": "center"
       });
     }
   });
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
   /* ======= Fixed Header animation ======= */
 
-  $(window).on("scroll", function () {
+  $(window).on("scroll", function() {
     if ($(window).scrollTop() > 100) {
       $("#header").addClass("header-shrink");
     } else {
@@ -36,9 +36,9 @@ $(document).ready(function () {
   $("body").scrollspy({ target: "#header", offset: 400 });
 
   /* ===== Smooth scrolling ====== */
-  $("a.scrollto").on("click", function (e) {
+  $("a.scrollto").on("click", function(e) {
     //store hash
-    var target = this.hash;
+    const target = this.hash;
     e.preventDefault();
     $("body").scrollTo(target, 800, { offset: -60, axis: "y" });
 
@@ -49,49 +49,47 @@ $(document).ready(function () {
   });
 
   /* ====== test ===== */
-  $("#navigation").on("show.bs.collapse", function () {
+  $("#navigation").on("show.bs.collapse", function() {
     $(".header").addClass("header-has-bg");
   });
-  $("#navigation").on("hide.bs.collapse", function () {
+  $("#navigation").on("hide.bs.collapse", function() {
     $(".header").removeClass("header-has-bg");
   });
 
   /* ======= Countdown ========= */
-  // set the date we're counting down to
-  var target_date = new Date("Oct 12, 2020").getTime();
-
-  // variables for time units
-  var days, hours, minutes, seconds;
 
   // get tag element
-  var countdown = document.getElementById("countdown-box");
-  var days_span = document.createElement("SPAN");
+  const countdown = document.getElementById("countdown-box");
+  const days_span = document.createElement("SPAN");
   days_span.className = "days";
   countdown.appendChild(days_span);
-  var hours_span = document.createElement("SPAN");
+  const hours_span = document.createElement("SPAN");
   hours_span.className = "hours";
   countdown.appendChild(hours_span);
-  var minutes_span = document.createElement("SPAN");
+  const minutes_span = document.createElement("SPAN");
   minutes_span.className = "minutes";
   countdown.appendChild(minutes_span);
-  var secs_span = document.createElement("SPAN");
+  const secs_span = document.createElement("SPAN");
   secs_span.className = "secs";
   countdown.appendChild(secs_span);
 
+  // set the date we're counting down to
+  const target_date = new Date(countdown.getAttribute("data-date")).getTime();
+
   // update the tag with id "countdown" every 1 second
-  setInterval(function () {
+  setInterval(function() {
     // find the amount of "seconds" between now and target
-    var current_date = new Date().getTime();
-    var seconds_left = (target_date - current_date) / 1000;
+    const current_date = new Date().getTime();
+    let seconds_left = (target_date - current_date) / 1000;
 
     // do some time calculations
-    days = parseInt(seconds_left / 86400);
+    const days = parseInt(seconds_left / 86400);
     seconds_left = seconds_left % 86400;
 
-    hours = parseInt(seconds_left / 3600);
+    const hours = parseInt(seconds_left / 3600);
     seconds_left = seconds_left % 3600;
 
-    minutes = parseInt(seconds_left / 60);
+    const minutes = parseInt(seconds_left / 60);
     seconds = parseInt(seconds_left % 60);
 
     // format countdown string + set tag value.
