@@ -14,6 +14,8 @@ The page will be available on <http://localhost:4000/20/dev.html>.
 
 ### CSS optimization
 
+> *Note:* This is done automatically on GitHub [using an Action](./.github/workflows/uncss.yaml)
+
 In order to create a CSS file with only the neccessary styles, we use [`uncss`](https://github.com/uncss/uncss).
 
     npm ci
