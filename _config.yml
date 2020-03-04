@@ -1,6 +1,6 @@
 repository: tech-women/adacon
 
-gems:
+plugins:
 - jekyll-github-metadata
 - jekyll-mentions
 - jekyll-redirect-from

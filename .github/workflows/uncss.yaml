@@ -1,0 +1,53 @@
+name: UNCSS
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Keep npm cache around to speed up installs
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-build-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-build-${{ env.cache-name }}-
+            ${{ runner.OS }}-build-
+            ${{ runner.OS }}-
+      - name: Install dependencies
+        run: npm ci --no-audit
+      - name: Keep Docker cache around to speed up installs
+        uses: actions/cache@v1
+        with:
+          path: /var/lib/docker
+          key: ${{ runner.OS }}-docker
+      - name: Start local server
+        run: docker run -d -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages > docker.pid
+      - name: UNCSS
+        run: make 20/theme.uncss.css
+      - name: Stop local server
+        run: docker stop `cat docker.pid`
+      - name: Commit build
+        run: |
+          echo "machine github.com login coderbyheart password ${GITHUB_TOKEN}" > ~/.netrc
+          git config user.email "actions@example.com"
+          git config user.name "GitHub Actions"
+          git status
+          CHANGED=$(git diff-index --name-only HEAD -- 20/theme.uncss.css)
+          if [ -n "$CHANGED" ]; then
+              git add 20/theme.uncss.css
+              git commit -m "build: update CSS build"
+              git push origin HEAD:gh-pages
+          fi
