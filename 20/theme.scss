@@ -35,43 +35,7 @@ $theme-colors: (
 );
 
 /*************************** Import Bootstrap  *****************************/
-@import "bootstrap/4.4.1/_functions";
-@import "bootstrap/4.4.1/_variables";
-@import "bootstrap/4.4.1/_mixins";
-@import "bootstrap/4.4.1/_root";
-@import "bootstrap/4.4.1/_reboot";
-@import "bootstrap/4.4.1/_type";
-@import "bootstrap/4.4.1/_images";
-//@import "bootstrap/4.4.1/_code";
-@import "bootstrap/4.4.1/_grid";
-//@import "bootstrap/4.4.1/_tables";
-//@import "bootstrap/4.4.1/_forms";
-@import "bootstrap/4.4.1/_buttons";
-@import "bootstrap/4.4.1/_transitions";
-//@import "bootstrap/4.4.1/_dropdown";
-//@import "bootstrap/4.4.1/_button-group";
-//@import "bootstrap/4.4.1/_input-group";
-//@import "bootstrap/4.4.1/_custom-forms";
-@import "bootstrap/4.4.1/_nav";
-@import "bootstrap/4.4.1/_navbar";
-@import "bootstrap/4.4.1/_card";
-//@import "bootstrap/4.4.1/_breadcrumb";
-//@import "bootstrap/4.4.1/_pagination";
-//@import "bootstrap/4.4.1/_badge";
-//@import "bootstrap/4.4.1/_jumbotron";
-//@import "bootstrap/4.4.1/_alert";
-//@import "bootstrap/4.4.1/_progress";
-//@import "bootstrap/4.4.1/_media";
-//@import "bootstrap/4.4.1/_list-group";
-@import "bootstrap/4.4.1/_close";
-//@import "bootstrap/4.4.1/_toasts";
-@import "bootstrap/4.4.1/_modal";
-//@import "bootstrap/4.4.1/_tooltip";
-//@import "bootstrap/4.4.1/_popover";
-@import "bootstrap/4.4.1/_carousel";
-//@import "bootstrap/4.4.1/_spinners";
-@import "bootstrap/4.4.1/_utilities";
-//@import "bootstrap/4.4.1/_print";
+@import "bootstrap/4.4.1/bootstrap";
 
 /*************************** Theme Styles Section ****************************/
 @import "20/styles.scss"; // Feather icons
