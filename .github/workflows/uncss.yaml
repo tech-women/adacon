@@ -32,8 +32,6 @@ jobs:
         run: docker run -d -it --rm -v "$PWD":/usr/src/app -p "4000:4000" starefossen/github-pages > /tmp/docker.pid
       - name: UNCSS
         run: make -B 20/theme.uncss.css
-      - name: Stop local server
-        run: docker stop `cat /tmp/docker.pid`
       - name: Commit build
         run: |
           echo "machine github.com login coderbyheart password ${GITHUB_TOKEN}" > ~/.netrc
@@ -46,3 +44,9 @@ jobs:
               git commit -m "build: update CSS build"
               git push origin HEAD:gh-pages
           fi
+      - name: Logs
+        if: always()
+        run: docker logs `cat /tmp/docker.pid`
+      - name: Stop local server
+        if: always()
+        run: docker stop `cat /tmp/docker.pid`
