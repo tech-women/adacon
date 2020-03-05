@@ -1,6 +1,8 @@
-# adacon-no
+# adacon.no
 
-*Ada Lovelace Conference 2020 in Oslo*
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier/)
+
+_Ada Lovelace Conference 2020 in Oslo_
 
 <https://adacon.no>
 
@@ -14,7 +16,7 @@ The page will be available on <http://localhost:4000/20/dev.html>.
 
 ### CSS optimization
 
-> *Note:* This is done automatically on GitHub [using an Action](./.github/workflows/uncss.yaml)
+> _Note:_ This is done automatically on GitHub [using an Action](./.github/workflows/uncss.yaml)
 
 In order to create a CSS file with only the neccessary styles, we use [`uncss`](https://github.com/uncss/uncss).
 
