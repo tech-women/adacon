@@ -728,16 +728,10 @@ button.close {
     .carousel-item {
       transition: none; } }
 
-.carousel-item.active {
-  display: block; }
-
 .carousel-fade .carousel-item {
   opacity: 0;
   transition-property: opacity;
   transform: none; }
-.carousel-fade .carousel-item.active {
-  z-index: 1;
-  opacity: 1; }
 
 .align-top {
   vertical-align: top !important; }
