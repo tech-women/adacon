@@ -36,6 +36,9 @@ $theme-colors: (
 
 /*************************** Import Bootstrap  *****************************/
 @import "bootstrap/4.4.1/bootstrap";
+/* uncss:ignore start */
+@import "bootstrap/4.4.1/_carousel";
+/* uncss:ignore end */
 
 /*************************** Theme Styles Section ****************************/
 @import "20/styles.scss"; // Feather icons
