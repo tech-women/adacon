@@ -6,3 +6,13 @@ plugins:
 - jekyll-redirect-from
 - jekyll-sitemap
 - jemoji
+
+carousel:
+  - https://cdn.sanity.io/images/q0ipzqdg/production/0de63fc64eec56092fe8908a58424ac5914fc041-4556x3417.jpg
+  - https://cdn.sanity.io/images/q0ipzqdg/production/234cb48ae38c1dfdf62c6eef22b900a3fa6ffb8b-6240x4160.jpg
+  - https://cdn.sanity.io/images/q0ipzqdg/production/a06c45e862c9ec4a7736a3f56fdda08a9f7c75e6-3928x2060.jpg
+  - https://cdn.sanity.io/images/q0ipzqdg/production/267f3ce8d29614e26981788194ad1e8c2061c5c7-3932x2324.jpg
+  - https://cdn.sanity.io/images/q0ipzqdg/production/5dcaa8d0785aa874c688f3a9d8cd9cfbe657785a-4004x2436.jpg
+  - https://cdn.sanity.io/images/q0ipzqdg/production/ed06da4037fc2cd3e516e37e5fda7e34a9d6815a-4184x3138.jpg
+  - https://cdn.sanity.io/images/q0ipzqdg/production/0b6d1317e9faf9dfed591a85051fa946e2ecb9dd-4002x2358.jpg
+  - https://cdn.sanity.io/images/q0ipzqdg/production/5c39b1e2a482c736647af41d7f82253b27d7dee7-4032x3024.jpg
