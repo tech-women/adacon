@@ -24,3 +24,9 @@ In order to create a CSS file with only the neccessary styles, we use [`uncss`](
     npx uncss http://127.0.0.1:4000/20/dev.html > 20/theme.uncss.css
 
 You can test the result on <http://localhost:4000/20/>.
+
+## Credits
+
+Design based on the awesome [DevConf theme](https://github.com/xriley/DevConf-Theme)
+by
+[Xiaoying Riley](http://themes.3rdwavemedia.com), which has been adapted for Jekyll/GitHub here.
