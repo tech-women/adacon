@@ -1301,7 +1301,8 @@ a.theme-link {
   .hero-carousel .carousel-item {
     background-color: #141c25;
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    filter: saturate(0.25); }
 
 .hero-text-block {
   color: #fff;
