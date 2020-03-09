@@ -1,11 +1,20 @@
 repository: tech-women/adacon
 
+name: Ada Lovelace Day Conference
+nickname: AdaCon
+tagline: Celebrating Norwegian Women in Tech
+short_description: Ada Lovelace Day Conference is a yearly conference which celebrates Norwegian women and non-binary people in Tech.
+twitter: techwomennorway
+instagram: techwomen
+youtube: https://www.youtube.com/channel/UCvwOLmtghrG0G4USdI7sBPw
+github: tech-women
+
 plugins:
-- jekyll-github-metadata
-- jekyll-mentions
-- jekyll-redirect-from
-- jekyll-sitemap
-- jemoji
+  - jekyll-github-metadata
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jemoji
 
 carousel:
   - https://cdn.sanity.io/images/q0ipzqdg/production/0de63fc64eec56092fe8908a58424ac5914fc041-4556x3417.jpg
