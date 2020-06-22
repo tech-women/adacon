@@ -22,8 +22,8 @@
   },
   "homepage": "https://github.com/tech-women/adacon#readme",
   "devDependencies": {
-    "lint-staged": "^10.0.8",
-    "prettier": "^1.19.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
     "uncss": "^0.17.3"
   },
   "husky": {
