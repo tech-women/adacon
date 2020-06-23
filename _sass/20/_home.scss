@@ -408,6 +408,22 @@
   }
 }
 
+.tiles {
+  display: grid;
+  grid-template: 1fr / auto;
+  grid-gap: 1.5rem;
+  .tile {
+    border: 1px solid #fff;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .tiles {
+    grid-template: 1fr 1fr / 1fr 1fr;
+  }
+}
+
 /* Sponsors */
 .logo-item {
   margin-bottom: 1rem;

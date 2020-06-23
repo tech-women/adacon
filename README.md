@@ -25,6 +25,10 @@ In order to create a CSS file with only the neccessary styles, we use [`uncss`](
 
 You can test the result on <http://localhost:4000/20/>.
 
+## Edit Images
+
+Images are stored on the [Sanity.io](https://sanity.io) CDN, you need to run the Studio to edit images. The instructions are in the [Adacon Sanity Studio](https://github.com/tech-women/adacon-sanity.git).
+
 ## Credits
 
 Design based on the awesome [DevConf theme](https://github.com/xriley/DevConf-Theme)
